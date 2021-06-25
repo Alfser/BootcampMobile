@@ -2,7 +2,8 @@
 class Pessoa{
     var nome: String = "Janilson"
     var cpf:String = "333.556.896.532-43"
-
+    private set
+    
     inner class Endereco{
         var rua:String = "Dois de Dezembro"
         var cep:String = "66816-030"
