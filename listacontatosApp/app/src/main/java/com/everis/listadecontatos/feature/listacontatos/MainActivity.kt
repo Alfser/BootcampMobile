@@ -20,6 +20,7 @@ import java.lang.Exception
 class MainActivity : BaseActivity() {
 
     private var adapter:ContatoAdapter? = null
+    private val sleepTime: Long = 500 //thread sleep time
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +32,13 @@ class MainActivity : BaseActivity() {
 
     private fun setupOnClicks(){
         fab.setOnClickListener { onClickAdd() }
-        ivBuscar.setOnClickListener { onClickBuscar() }
+        ivBuscar.setOnClickListener {
+            if(!etBuscar.isEnabled()){
+                etBuscar.setEnabled(true)
+                return@setOnClickListener
+            }
+            onClickBuscar()
+        }
     }
 
     private fun setupListView(){
@@ -40,6 +47,7 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
+        //buscar contatos
         onClickBuscar()
     }
 
@@ -55,9 +63,10 @@ class MainActivity : BaseActivity() {
     }
 
     private fun onClickBuscar(){
+
         progress.visibility = View.VISIBLE
         Thread {
-            Thread.sleep(1500)
+            Thread.sleep(sleepTime)
 
             val stringSearch = etBuscar.text.toString()
             var FilteredList = mutableListOf<ContactsModel>()
@@ -68,8 +77,6 @@ class MainActivity : BaseActivity() {
                 adapter =
                     ContatoAdapter(this@MainActivity, FilteredList) { onClickItemRecyclerView(it) }
                 recyclerView.adapter = adapter
-
-                Toast.makeText(this, "Buscando por $stringSearch", Toast.LENGTH_SHORT).show()
                 progress.visibility = View.GONE
             }
         }.start()

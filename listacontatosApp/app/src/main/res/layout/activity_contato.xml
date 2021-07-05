@@ -2,88 +2,120 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
-    <LinearLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
             app:titleTextColor="@color/TextDarkColor"
             android:elevation="4dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/labelName"
+            android:textColor="@color/TextDarkColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nome_contato"
+            android:layout_margin="@dimen/max_margin"
+            app:layout_constraintTop_toBottomOf="@id/toolBar"
+            app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/edNome"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="vertical">
-                <TextView
-                    android:textColor="@color/TextDarkColor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nome contato:"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/max_margin"
+            android:textColor="@color/TextDarkColor"
+            android:enabled="false"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/labelName"
+            app:layout_constraintEnd_toStartOf="parent"/>
 
-                <EditText
-                    android:id="@+id/edNome"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/TextDarkColor"
-                    android:enabled="false"/>
+        <TextView
+            android:id="@+id/labelTelefone"
+            android:textColor="@color/TextDarkColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/max_margin"
+            android:text="@string/telefone"
+            app:layout_constraintTop_toBottomOf="@id/edNome"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            </LinearLayout>
+        <EditText
+            android:id="@+id/edTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/max_margin"
+            android:textColor="@color/TextDarkColor"
+            android:enabled="false"
+            android:inputType="phone"
+            app:layout_constraintTop_toBottomOf="@+id/labelTelefone"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-                <TextView
-                    android:textColor="@color/TextDarkColor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nome telefone:"/>
+        <TextView
+            android:id="@+id/labelEmail"
+            android:textColor="@color/TextDarkColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/max_margin"
+            android:text="@string/email"
+            app:layout_constraintTop_toBottomOf="@id/edTelefone"
+            app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/edEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/max_margin"
+            android:textColor="@color/TextDarkColor"
+            android:enabled="false"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/labelEmail"
+            app:layout_constraintStart_toStartOf="parent" />
 
-                <EditText
-                    android:id="@+id/edTelefone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/TextDarkColor"
-                    android:enabled="false"/>
+        <Button
+            android:id="@+id/btnSalvarConato"
+            android:text="@string/btn_salvar"
+            android:layout_margin="@dimen/max_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/guidelineContact"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <Button
+            android:id="@+id/btnExcluirContato"
+            android:onClick="onClickExcluirContato"
+            android:text="@string/btn_excluir"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/max_margin"
+            app:layout_constraintTop_toBottomOf="@id/btnSalvarConato"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-            </LinearLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="400dp" />
 
-            <Button
-                android:id="@+id/btnSalvarConato"
-                android:text="Salvar contato"
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <Button
-                android:id="@+id/btnExcluirContato"
-                android:onClick="onClickExcluirContato"
-                android:text="Excluir contato"
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-    </LinearLayout>
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:id="@+id/progress"
         android:layout_gravity="center" />
+
 </FrameLayout>

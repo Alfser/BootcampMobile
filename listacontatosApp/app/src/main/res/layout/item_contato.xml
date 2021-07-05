@@ -9,25 +9,64 @@
     app:cardCornerRadius="@dimen/min_radius"
     android:id="@+id/llItem">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:background="@color/colorSecondary"
         android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvImagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/circle_radius"
+            android:background="@drawable/round_imag"
+            android:elevation="1dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/imgContato"
+                android:layout_width="@dimen/img_card"
+                android:layout_height="@dimen/img_card"
+                style="@style/AppTheme"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/img_contact"
+                android:contentDescription="@string/foto_contato" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="100dp" />
+
         <TextView
             android:id="@+id/tvNome"
-            android:textColor="#FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Teste"/>
+            android:text="@string/text_teste"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            style="@style/text_card" />
         <TextView
             android:id="@+id/tvTelefone"
-            android:textColor="#FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Teste"/>
+            android:text="@string/text_teste"
+            app:layout_constraintTop_toBottomOf="@id/tvNome"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            style="@style/text_card"/>
+        <TextView
+            android:id="@+id/tvEmail"
+            style="@style/text_card"
+            app:layout_constraintTop_toBottomOf="@id/tvTelefone"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            android:text="@string/text_teste"/>
 
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

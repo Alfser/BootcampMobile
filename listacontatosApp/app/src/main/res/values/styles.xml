@@ -11,4 +11,11 @@
         <item name="android:textSize">@dimen/min_textSize</item>
     </style>
 
+    <style name="text_card">
+        <item name="android:textColor">@color/TextLightColor</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/min_textSize</item>
+    </style>
+
 </resources>

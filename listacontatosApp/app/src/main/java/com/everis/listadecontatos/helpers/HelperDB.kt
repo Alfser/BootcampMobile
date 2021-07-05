@@ -15,19 +15,21 @@ class HelperDB(
 
     companion object{
         private val DATABASE_NAME = "contacts.db"
-        private val CURRENT_VERSION = 1
+        private val CURRENT_VERSION = 2
     }
 
     val TABLE_NAME = "contact"
     val COLUMN_ID = "id"
     val COLUMN_NAME = "name"
     val COLUMN_CELLPHONE = "cellphone"
+    val COLUMN_EMAIL = "email"
     val DROP_TABLE = "DROP TABLE IF EXISTS $TABLE_NAME"
     val CREATE_TABLE = """
             CREATE TABLE $TABLE_NAME (
             $COLUMN_ID INTEGER NOT NULL, 
             $COLUMN_NAME TEXT NOT NULL, 
             $COLUMN_CELLPHONE TEXT NOT NULL,
+            $COLUMN_EMAIL TEXT NULL,
             PRIMARY KEY($COLUMN_ID AUTOINCREMENT)) """.trimIndent()
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -60,7 +62,8 @@ class HelperDB(
                 val contact = ContactsModel(
                     cursor.getInt(cursor.getColumnIndex(COLUMN_ID)),
                     cursor.getString(cursor.getColumnIndex(COLUMN_NAME)),
-                    cursor.getString(cursor.getColumnIndex(COLUMN_CELLPHONE))
+                    cursor.getString(cursor.getColumnIndex(COLUMN_CELLPHONE)),
+                    cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL))
                 )
 
                 contactsList.add(contact)
@@ -87,7 +90,8 @@ class HelperDB(
             contact = ContactsModel(
                 id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID)),
                 name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME)),
-                cellphone = cursor.getString(cursor.getColumnIndex(COLUMN_CELLPHONE))
+                cellphone = cursor.getString(cursor.getColumnIndex(COLUMN_CELLPHONE)),
+                email = cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL))
             )
 
             return  contact
@@ -100,8 +104,8 @@ class HelperDB(
 
     fun saveContact(contact:ContactsModel){
         val db = writableDatabase
-        val sql ="INSERT INTO $TABLE_NAME ($COLUMN_NAME, $COLUMN_CELLPHONE)VALUES(?, ?)"
-        val params:Array<String> = arrayOf(contact.name, contact.cellphone)
+        val sql ="INSERT INTO $TABLE_NAME ($COLUMN_NAME, $COLUMN_CELLPHONE, $COLUMN_EMAIL)VALUES(?, ?, ?)"
+        val params:Array<String> = arrayOf(contact.name, contact.cellphone, contact.email)
         db.execSQL(sql, params)
     }
 
@@ -114,8 +118,8 @@ class HelperDB(
 
     fun updateContact(contact:ContactsModel){
         val db = writableDatabase
-        val sql = "UPDATE $TABLE_NAME SET $COLUMN_NAME = ?, $COLUMN_CELLPHONE = ? WHERE $COLUMN_ID = ?"
-        val params: Array<String> = arrayOf(contact.name, contact.cellphone, contact.id.toString())
+        val sql = "UPDATE $TABLE_NAME SET $COLUMN_NAME = ?, $COLUMN_CELLPHONE = ?, $COLUMN_EMAIL = ? WHERE $COLUMN_ID = ?"
+        val params: Array<String> = arrayOf(contact.name, contact.cellphone, contact.email, contact.id.toString())
         db.execSQL(sql, params)
     }
 }

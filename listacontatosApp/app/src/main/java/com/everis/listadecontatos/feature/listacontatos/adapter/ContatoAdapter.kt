@@ -27,6 +27,7 @@ class ContatoAdapter(
         with(holder.itemView){
             tvNome.text = contact.name
             tvTelefone.text = contact.cellphone
+            tvEmail.text = contact.email
             llItem.setOnClickListener { onClick(contact.id) }
         }
     }
