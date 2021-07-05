@@ -1,4 +1,4 @@
-# BootcampMobile
+# Bootcamp Mobile Santander
 Este repositório contém as atividades e projetos realizados no Bootcamp Mobile Android promovido pelo Santander e a DIO.
 
 ## App de Cálculo de IMC
