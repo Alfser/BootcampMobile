@@ -1,21 +1,20 @@
 # ListaDeContatos
+
 App de lista de contatos.
 Ele foi desenvolvido dentro do bootcamp Mobile Santander Inspirado nas aulas e exemplos de **Desenvolvimento Integrado de Dados com SQLite no Android**.
----
 
-# SnapShots of the Application.
+# Screenshots do Aplicativo.
+
 ![Snapshot0](./screenshots/home.jpeg)
 ![Snapshot2](./screenshots/searching.jpeg)
 ![Snapshot2](./screenshots/add.jpeg)
 ![Snapshot1](./screenshots/update.jpeg)
 ![Snapshot2](./screenshots/delete.jpeg)
 
----
 
 # Adroid APK
 Android apk exemplo para dowloaded [here](./exemple/app-debug.apk)
 
---
 # Licença
 
 Copyright 2019-2021 Janilson Serra.
@@ -35,7 +34,6 @@ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
 License for the specific language governing permissions and limitations under
 the License.
 
----
 # Contate me
 
 - Email: j.janilson12@gmail.com
