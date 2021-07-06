@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="imc_edit_text">
+    <style name="imc_edit_text" parent="Widget.AppCompat.EditText">
         <item name="android:inputType">numberDecimal</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/min_margin</item>
+        <item name="android:layout_margin">@dimen/max_margin</item>
     </style>
 </resources>
