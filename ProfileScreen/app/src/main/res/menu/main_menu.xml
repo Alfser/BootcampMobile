@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_1"
+        android:title="menu 1"
+        android:contentDescription="item de menu 1" />
+
+    <item
+        android:id="@+id/menu_2"
+        android:title="menu 2"
+        android:contentDescription="item de menu 2"/>
+
+    <item
+        android:id="@+id/sub_menu"
+        android:title="sub menu"
+        android:contentDescription="item de sub menu">
+        <menu>
+            <item
+                android:id="@+id/sub_menu_1"
+                android:title="sub menu 1"
+                android:contentDescription="item de sub menu 1" />
+
+            <item
+                android:id="@+id/sub_menu_2"
+                android:title="sub menu 2"
+                android:contentDescription="item de sub menu 2"/>
+        </menu>
+    </item>
+
+</menu>

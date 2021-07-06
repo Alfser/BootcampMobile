@@ -1,20 +1,11 @@
-# Bootcamp Mobile Santander
-Este repositório contém as atividades e projetos realizados no Bootcamp Mobile Android promovido pelo Santander e a DIO.
+# IMCApp
+App para mastrar tela de perfil.
+Este app foi desenvolvido dentro do Bootcamp Mobile Santander, inspirado nas aulas de **Conceitos de Navegação, Aparência e Estilo de Aplicativos Android**
 
-## App de Cálculo de IMC
-### [IMCApp](./IMCApp)
-
-<img src='./IMCApp/screenshots/home.jpeg' width=200 height=350/>
-
-## App de Lista de Contatos
-### [ListaDeContados](./listacontatosApp/)
-<img src='./listacontatosApp/screenshots/home.jpeg' width=200 height=350/>
-
-## App de Cálculo de IMC
-### [ProfileScreen](./ProfileScreen)
-
-Em desenvolvimento...
-
+# Screenshots do Aplicativo.
+	App em desenvolvimento
+# Adroid APK
+	App em desenvolvimento
 # Licença
 
 Copyright 2019-2021 Janilson Serra.
@@ -34,7 +25,6 @@ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
 License for the specific language governing permissions and limitations under
 the License.
 
----
 # Contate me
 
 - Email: j.janilson12@gmail.com

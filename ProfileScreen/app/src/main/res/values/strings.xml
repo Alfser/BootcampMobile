@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">IMCApp</string>
+    <string name="hint_peso">Peso (ex.: 30.5 kg)</string>
+    <string name="hint_altura">altura (ex.: 1.67 m)</string>
+    <string name="text_bt_calcular">calcular</string>
+    <string name="text_view_imc">IMC</string>
+    <string name="open_drawer">abrir</string>
+    <string name="close_drawer">fechar</string>
+</resources>
