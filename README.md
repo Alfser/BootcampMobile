@@ -13,7 +13,7 @@ Este repositório contém as atividades e projetos realizados no Bootcamp Mobile
 ## App de Cálculo de IMC
 ### [ProfileScreen](./ProfileScreen)
 
-Em desenvolvimento...
+<img src='./ProfileScreen/screenshots/menu.jpeg' width=200 height=350/>
 
 # Licença
 
