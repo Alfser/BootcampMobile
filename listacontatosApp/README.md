@@ -3,7 +3,13 @@
 App de lista de contatos.
 Ele foi desenvolvido dentro do bootcamp Mobile Santander Inspirado nas aulas e exemplos de **Desenvolvimento Integrado de Dados com SQLite no Android**.
 
-# Screenshots do Aplicativo.
+## Principais recursos usados
+
+ - SQLiteHelper
+ - RecycleView
+ - Threads
+ - Material design
+## Screenshots do Aplicativo.
 
 ![Snapshot0](./screenshots/home.jpeg)
 ![Snapshot2](./screenshots/searching.jpeg)
@@ -12,10 +18,10 @@ Ele foi desenvolvido dentro do bootcamp Mobile Santander Inspirado nas aulas e e
 ![Snapshot2](./screenshots/delete.jpeg)
 
 
-# Adroid APK
+## Adroid APK
 Android apk exemplo para dowloaded [here](./exemple/app-debug.apk)
 
-# Licença
+## Licença
 
 Copyright 2019-2021 Janilson Serra.
 
@@ -34,7 +40,7 @@ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
 License for the specific language governing permissions and limitations under
 the License.
 
-# Contate me
+## Contate me
 
 - Email: j.janilson12@gmail.com
 - Linkedin : https://www.linkedin.com/in/janilsonalfser

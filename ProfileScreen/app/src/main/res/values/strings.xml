@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">IMCApp</string>
+    <string name="app_name">Profile Screen</string>
     <string name="hint_peso">Peso (ex.: 30.5 kg)</string>
     <string name="hint_altura">altura (ex.: 1.67 m)</string>
-    <string name="bt_save">Salvar</string>
-    <string name="tv_name">nome</string>
+    <string name="bt_save">Show user</string>
+    <string name="tv_name">name</string>
     <string name="open_drawer">abrir</string>
     <string name="close_drawer">fechar</string>
     <string name="tv_email">Email</string>
@@ -13,4 +13,17 @@
     <string name="preference_email">com.example.email</string>
     <string name="preference_photo">com.example.photo</string>
     <string name="preference_password">com.example.password</string>
+    <string name="profile_image">profile image</string>
+    <string name="default_profile_name">Profile Name</string>
+    <string name="default_profile_email">Profile Email</string>
+    <string name="home_item_home">Home</string>
+    <string name="home_item_desc_home">Go to home screen</string>
+    <string name="home_item_favorites">Favorites</string>
+    <string name="home_desc_favorites">Favorite items</string>
+    <string name="home_section_settings">settings</string>
+    <string name="home_desc_section_settings">User settings</string>
+    <string name="home_item_profile_edit">Profile edit</string>
+    <string name="home_desc_profile_edit">change user profile information</string>
+    <string name="home_item_logout">Log out</string>
+    <string name="home_desc_logout">log out current user</string>
 </resources>

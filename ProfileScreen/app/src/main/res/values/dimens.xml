@@ -4,4 +4,6 @@
     <dimen name="min_margin">15dp</dimen>
     <dimen name="max_margin">30dp</dimen>
     <dimen name="dim_big_text">50sp</dimen>
+    <dimen name="img_profile">150dp</dimen>
+    <dimen name="circlo_radius">70dp</dimen>
 </resources>

@@ -2,31 +2,46 @@ package com.example.profilescreen
 
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.drawerlayout.widget.DrawerLayout
+import com.example.profilescreen.databinding.ActivityMainBinding
+import com.example.profilescreen.databinding.MainDrawerLayoutBinding
 import java.sql.Date
 
 
 class MainActivity : AppCompatActivity() {
 
     val TAG = "MainActivity"
+    private lateinit var binding:MainDrawerLayoutBinding
+    private lateinit var activityMainBinding: ActivityMainBinding
+    lateinit var nameHeader: TextView
+    lateinit var emailHeader: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_dorwer_layout)
-        setupDrawer()
+        binding = MainDrawerLayoutBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
+        initViews()
+        setupDrawer()
         setSharedPreferences()
     }
 
+    private fun initViews(){
+        activityMainBinding = binding.activityMain
+        val drawNavHeader = binding.mainDrawNavView.getHeaderView(0)
+        nameHeader = drawNavHeader.findViewById(R.id.drawer_profile_name)
+        emailHeader = drawNavHeader.findViewById(R.id.drawer_profile_email)
+    }
+
     private fun setupDrawer(){
-        val toolbar: Toolbar = findViewById(R.id.main_toolbar)
+        val toolbar: Toolbar = activityMainBinding.mainToolbar
         setSupportActionBar(toolbar)
-        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        val drawer = binding.drawerLayout
         val toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.open_drawer, R.string.close_drawer)
         toggle.syncState()
     }
@@ -55,24 +70,28 @@ class MainActivity : AppCompatActivity() {
             putString(getString(R.string.preference_password), user.password)
             commit()
         }
+
+        nameHeader.text = user.name
+        emailHeader.text = user.email
     }
 
     private fun getSharedPreferences(){
         val preferences = getSharedPreferences("user", MODE_PRIVATE)
         preferences.let {
-            val nome = it.getString(getString(R.string.preference_name), "")
+            val name = it.getString(getString(R.string.preference_name), "")
             val birthDate = it.getString(getString(R.string.preference_birth), "")
             val email = it.getString(getString(R.string.preference_email), "")
 
-            Log.i(TAG, "nome: $nome, birthDate: $birthDate, email: $email")
+            activityMainBinding.mainTvName.text = name
+            activityMainBinding.mainTvDate.text = birthDate
+            activityMainBinding.mainTvEmail.text = email
+
+            Log.i(TAG, "nome: $name, birthDate: $birthDate, email: $email")
         }
 
     }
 
     fun onClickSave(view: View) {
-
-        setSharedPreferences()
-
         getSharedPreferences()
     }
 }

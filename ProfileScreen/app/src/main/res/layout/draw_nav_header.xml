@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/max_margin"
+        app:cardCornerRadius="@dimen/circlo_radius"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="@dimen/img_profile"
+            android:layout_height="@dimen/img_profile"
+            android:src="@drawable/photo_profile"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/profile_image" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/drawer_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/min_margin"
+        android:text="@string/default_profile_name"
+        app:layout_constraintStart_toStartOf="@id/layout_image"
+        app:layout_constraintEnd_toEndOf="@id/layout_image"
+        app:layout_constraintTop_toBottomOf="@id/layout_image"/>
+
+    <TextView
+        android:id="@+id/drawer_profile_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/min_margin"
+        android:text="@string/default_profile_email"
+        app:layout_constraintStart_toStartOf="@id/layout_image"
+        app:layout_constraintEnd_toEndOf="@id/layout_image"
+        app:layout_constraintTop_toBottomOf="@id/drawer_profile_name"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

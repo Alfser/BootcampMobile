@@ -2,6 +2,11 @@
 App para cálculo de índice de maça corpória.
 Este app foi desenvolvido dentro do Bootcamp Mobile Santander, dentro do desafia da aula de **Projetando o Primeiro Aplicativo Android Usando Kotlin**
 
+## Principais recursos usados
+
+ - Constraint Layout.
+ - Basico do android.
+
 # Screenshots do Aplicativo.
 
 ![Snapshot0](./screenshots/home.jpeg)

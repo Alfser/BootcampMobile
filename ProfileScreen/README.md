@@ -2,11 +2,24 @@
 App para mastrar tela de perfil.
 Este app foi desenvolvido dentro do Bootcamp Mobile Santander, inspirado nas aulas de **Conceitos de Navegação, Aparência e Estilo de Aplicativos Android**
 
-# Screenshots do Aplicativo.
+## Principais recursos usados
+
+ - SharedPreferences
+ - Drawer Navegation
+ - View Binding
+
+## Screenshots do Aplicativo.
+
+![home](./screenshots/home.jpeg)
+
+![profile](./screenshots/menu.jpeg)
+
+![show user](./screenshots/show_user.jpeg)
+
+
+## Adroid APK
 	App em desenvolvimento
-# Adroid APK
-	App em desenvolvimento
-# Licença
+## Licença
 
 Copyright 2019-2021 Janilson Serra.
 
@@ -25,7 +38,7 @@ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
 License for the specific language governing permissions and limitations under
 the License.
 
-# Contate me
+## Contate me
 
 - Email: j.janilson12@gmail.com
 - Linkedin : https://www.linkedin.com/in/janilsonalfser

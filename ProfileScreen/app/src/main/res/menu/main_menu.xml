@@ -2,30 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_1"
-        android:title="menu 1"
-        android:contentDescription="item de menu 1" />
+        android:id="@+id/home_item"
+        android:title="@string/home_item_home"
+        android:contentDescription="@string/home_item_desc_home" />
 
     <item
-        android:id="@+id/menu_2"
-        android:title="menu 2"
-        android:contentDescription="item de menu 2"/>
+        android:id="@+id/favorites_item"
+        android:title="@string/home_item_favorites"
+        android:contentDescription="@string/home_desc_favorites"/>
 
     <item
-        android:id="@+id/sub_menu"
-        android:title="sub menu"
-        android:contentDescription="item de sub menu">
+        android:id="@+id/settings_item"
+        android:title="@string/home_section_settings"
+        android:contentDescription="@string/home_desc_section_settings">
         <menu>
             <item
-                android:id="@+id/sub_menu_1"
-                android:title="sub menu 1"
-                android:contentDescription="item de sub menu 1" />
+                android:id="@+id/profile_edit_item"
+                android:title="@string/home_item_profile_edit"
+                android:contentDescription="@string/home_desc_profile_edit" />
 
             <item
-                android:id="@+id/sub_menu_2"
-                android:title="sub menu 2"
-                android:contentDescription="item de sub menu 2"/>
+                android:id="@+id/logout_item"
+                android:title="@string/home_item_logout"
+                android:contentDescription="@string/home_desc_logout"/>
         </menu>
     </item>
-
 </menu>
