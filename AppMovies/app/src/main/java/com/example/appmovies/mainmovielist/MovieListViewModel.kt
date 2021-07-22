@@ -1,9 +1,14 @@
-package com.example.appmovies
+package com.example.appmovies.mainmovielist
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.appmovies.data.MovieRepository
+import com.example.appmovies.data.MovieRestApiTask
+import com.example.appmovies.domain.Movie
+import com.example.appmovies.implementations.MovieDataSourceImplementation
+import com.example.appmovies.usecases.MovieListUseCase
 import java.lang.Exception
 
 class MovieListViewModel: ViewModel() {
@@ -19,7 +24,9 @@ class MovieListViewModel: ViewModel() {
     )
 
     private val movieRestApiTask = MovieRestApiTask()
-    private val movieRepository = MovieRepository(movieRestApiTask)
+    private val movieDataSource: MovieDataSourceImplementation = MovieDataSourceImplementation(movieRestApiTask)
+    private val movieRepository = MovieRepository(movieDataSource)
+    private val movieListUseCase = MovieListUseCase(movieRepository)
 
     private val _movieList = MutableLiveData<List<Movie>>()
     val movieList: LiveData<List<Movie>>
@@ -33,7 +40,7 @@ class MovieListViewModel: ViewModel() {
 
         Thread{
             try {
-                _movieList.postValue(movieRepository.getAllMovies())
+                _movieList.postValue(movieListUseCase.invoke())
 
             }catch (ex: Exception){
                 Log.d(TAG, ex.message.toString())

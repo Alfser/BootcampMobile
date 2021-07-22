@@ -1,13 +1,12 @@
-package com.example.appmovies
+package com.example.appmovies.mainmovielist
 
-import android.transition.CircularPropagation
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
-import coil.transform.CircleCropTransformation
+import com.example.appmovies.R
 import com.example.appmovies.databinding.RecyclerViewItemBinding
+import com.example.appmovies.domain.Movie
 
 class MovieAdapter(): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
 

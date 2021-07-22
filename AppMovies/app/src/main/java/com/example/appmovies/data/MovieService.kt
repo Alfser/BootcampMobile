@@ -1,5 +1,6 @@
-package com.example.appmovies
+package com.example.appmovies.data
 
+import com.example.appmovies.domain.Movie
 import retrofit2.Call
 import retrofit2.http.GET
 

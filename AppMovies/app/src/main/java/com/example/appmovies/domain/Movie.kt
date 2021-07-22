@@ -1,4 +1,4 @@
-package com.example.appmovies
+package com.example.appmovies.domain
 
 import com.google.gson.annotations.SerializedName
 import java.sql.Date
