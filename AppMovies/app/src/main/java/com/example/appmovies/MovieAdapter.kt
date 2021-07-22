@@ -9,7 +9,9 @@ import coil.api.load
 import coil.transform.CircleCropTransformation
 import com.example.appmovies.databinding.RecyclerViewItemBinding
 
-class MovieAdapter(private val movies: List<Movie>): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
+class MovieAdapter(): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
+
+    private var movies: List<Movie> = listOf()
 
     inner class MovieViewHolder(
         val binding: RecyclerViewItemBinding
@@ -35,4 +37,8 @@ class MovieAdapter(private val movies: List<Movie>): RecyclerView.Adapter<MovieA
     }
 
     override fun getItemCount(): Int = movies.size
+
+    fun setMovieList(movies: List<Movie>) {
+        this.movies = movies
+    }
 }
