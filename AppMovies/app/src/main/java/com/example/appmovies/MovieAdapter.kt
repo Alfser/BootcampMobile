@@ -32,7 +32,6 @@ class MovieAdapter(): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
             placeholder(R.drawable.ic_image_default)
             fallback(R.drawable.ic_image_default)
             error(R.drawable.ic_image_error)
-            transformations(CircleCropTransformation())
         }
     }
 
@@ -40,5 +39,6 @@ class MovieAdapter(): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
 
     fun setMovieList(movies: List<Movie>) {
         this.movies = movies
+        notifyDataSetChanged()
     }
 }

@@ -1,12 +1,13 @@
 package com.example.appmovies
 
+import com.google.gson.annotations.SerializedName
 import java.sql.Date
 
 
 data class Movie(
-    val id: Long,
-    val title: String,
-    val description: String? = null,
-    val image: String? = null,
+    @SerializedName("id") val id: Long,
+    @SerializedName("titulo") val title: String,
+    @SerializedName("descricao") val description: String? = null,
+    @SerializedName("imagem") val image: String? = null,
     val date: Date? = null
 )

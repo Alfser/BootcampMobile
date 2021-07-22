@@ -1,10 +1,16 @@
 package com.example.appmovies
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import java.lang.Exception
 
 class MovieListViewModel: ViewModel() {
+
+    companion object{
+        const val TAG = "MovieLisViewModel"
+    }
 
     private val movies = listOf(
         Movie(id = 0L, title = "Titanic"),
@@ -12,8 +18,10 @@ class MovieListViewModel: ViewModel() {
         Movie(id = 0L, title = "Arrival")
     )
 
-    private val _movieList = MutableLiveData<List<Movie>>()
+    private val movieRestApiTask = MovieRestApiTask()
+    private val movieRepository = MovieRepository(movieRestApiTask)
 
+    private val _movieList = MutableLiveData<List<Movie>>()
     val movieList: LiveData<List<Movie>>
         get() = _movieList
 
@@ -22,6 +30,15 @@ class MovieListViewModel: ViewModel() {
     }
 
     private fun getAllMovies(){
-        _movieList.value =  movies
+
+        Thread{
+            try {
+                _movieList.postValue(movieRepository.getAllMovies())
+
+            }catch (ex: Exception){
+                Log.d(TAG, ex.message.toString())
+            }
+
+        }.start()
     }
 }
