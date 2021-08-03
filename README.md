@@ -21,9 +21,9 @@ Este repositório contém as atividades e projetos realizados no Bootcamp Mobile
 <img src='./notesapp/screenshots/screen_1.jpg' width=200 height=350/>
 
 ## App de Cálculo de IMC
-### [android-bootcamp-threading](./android-bootcamp-threading)
+### [AppAstronautas](././AppAstronautas)
 
-<img src='./android-bootcamp-threading/screenshots/screen_2.jpg' width=200 height=350/>
+<img src='./AppAstronautas/screenshots/screen_2.jpg' width=200 height=350/>
 
 # Licença
 

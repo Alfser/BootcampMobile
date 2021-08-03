@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Bootcamp AsyncTask</string>
+    <string name="btn_load">Carregar</string>
+</resources>
