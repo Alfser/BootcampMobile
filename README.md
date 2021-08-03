@@ -15,9 +15,19 @@ Este repositório contém as atividades e projetos realizados no Bootcamp Mobile
 
 <img src='./ProfileScreen/screenshots/menu.jpeg' width=200 height=350/>
 
+## App de Cálculo de IMC
+### [notesapp](./notesapp)
+
+<img src='./notesapp/screenshots/screen_1.jpg' width=200 height=350/>
+
+## App de Cálculo de IMC
+### [android-bootcamp-threading](./android-bootcamp-threading)
+
+<img src='./android-bootcamp-threading/screenshots/screen_2.jpg' width=200 height=350/>
+
 # Licença
 
-Copyright 2019-2021 Janilson Serra.
+Copyright 021 Janilson Serra.
 
 Licensed to the Apache Software Foundation (ASF) under one or more contributor
 license agreements.  See the NOTICE file distributed with this work for
